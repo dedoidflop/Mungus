@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+    <style>
+        body {
+	    font-family: Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9fcce0; /* Light blue background color */
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            position: relative; /* Add relative positioning to the body for absolute positioning of the overlay text */
+
+        }
+        .content-container {
+            text-align: center; /* Center content within the container */
+            position: relative; /* Ensure relative positioning for child elements */
+
+
+
+        }
+
+	.overlay-text {
+            position: absolute;
+            top: 55%;
+            left: 22%;
+            transform: translate(-50%, -50%)rotate(-37deg);
+            color: #ffffff; /* White text color */
+            font-size: 25px;
+            font-weight: 400;
+            opacity: 0.8; /* Adjust the opacity as needed (0.0 to 1.0) */
+            z-index: -1; /* Set a higher z-index to place it in front of the image */
+        }
+        .overlay-text:nth-child(7) {
+            top: 12%;
+            left: 78%;
+        }
+
+        .overlay-text:nth-child(3) {
+            top: 34%;
+            left: 78%;
+        }
+
+        .overlay-text:nth-child(4) {
+            top: 34%;
+            left: 22%;
+        }
+
+        .overlay-text:nth-child(5) {
+            top: 55%;
+            left: 78%;
+        }
+
+        .overlay-text:nth-child(6) {
+            top: 12%;
+            left: 22%;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+            margin-top: 0px; /* Adjust the margin to position the image closer to the top */
+
+        }
+        .banner {
+            position: fixed;
+            top: 50;
+            left: -5%;
+            width: 110%;
+            background-color: #333; /* Banner background color */
+            color: #fff; /* Text color */
+            text-align: center;
+            padding: 10px; /* Adjust padding as needed */
+            z-index: 1000; /* Set a higher z-index to place it above other elements */
+            animation: countdown 1200s linear forwards; /* 20 minutes countdown animation */
+            animation: rotateBanner 10s linear infinite, countdown 1200s linear forwards; /* Rotate left and right by 10 degrees every 10 seconds and countdown animation */
+
+        }
+    	@keyframes rotateBanner {
+        	0%, 100% {
+            	transform: rotate(0);
+        	}
+        	25% {
+            	transform: rotate(10deg); /* Rotate left by 10 degrees in the first 5 seconds */
+        	}
+        	50% {
+            	transform: rotate(0); /* Back to the initial rotation */
+        	}
+        	75% {
+            	transform: rotate(-10deg); /* Rotate right by 10 degrees in the next 5 seconds */
+        	}
+    	}
+
+        }
+	@keyframes countdown {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
+
+	p {
+            margin-top: 20px; /* Adjust the margin to create space between the image and the text */
+            font-size: 24px; /* Adjust the font size as needed */
+            font-weight: 500; /* Make the text bold ,400-700 */
+            letter-spacing: 0px; /* Add slight horizontal stretching */
+        }
+
+        /* Additional styles for the color picker */
+        .color-picker-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        input[type="color"] {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content-container">
+
+        <!-- Replace "your-image.png" with the actual file path or URL of your PNG image -->
+        <img src="greg.png" alt="Your Image Description">
+        
+        <!-- Add text below the image -->
+        <p>Manchester<br>Annual UniRider</p>
+
+	<!-- Add overlay text directly in the body -->
+        <div class="overlay-text">Student</div>
+	<div class="overlay-text">Student</div>
+        <div class="overlay-text">Student</div>
+        <div class="overlay-text">Student</div>
+        <div class="overlay-text">Student</div>
+        <div class="overlay-text">Student</div>
+	<div class="banner">
+        	 <span id="countdown">20:00</span>  
+   	<div class="color-picker-container">
+        Banner Color: <input type="color" id="bannerColorPicker" value="#333" onchange="changeBannerColor()">
+    </div>
+
+
+    </div>
+    <script>
+        // JavaScript code to dynamically update countdown timer
+        const countdownElement = document.getElementById('countdown');
+        let countdownTime = 1200; // 20 minutes in seconds
+
+        setInterval(() => {
+            const minutes = Math.floor(countdownTime / 60);
+            const seconds = countdownTime % 60;
+
+            countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            
+            if (countdownTime > 0) {
+                countdownTime--;
+            }
+        }, 1000);
+
+        // JavaScript function to change banner color based on the color picker
+        function changeBannerColor() {
+            const banner = document.getElementById('banner');
+            const colorPicker = document.getElementById('bannerColorPicker');
+            banner.style.backgroundColor = colorPicker.value;
+        }
+
+    </script>
+</body>
+</html>
