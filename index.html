@@ -65,14 +65,16 @@
         }
 
         img {
-            max-width: 50%;
+            max-width: 15%;
             height: auto;
             margin-top: 0px; /* Adjust the margin to position the image closer to the top */
 
         }
 	.top-image {
-            width: 200px; /* Set the desired width */
+            max-width: 30%; /* Set the desired width */
             height: auto;
+	    z-index: 5;
+    	    margin-bottom: 20px;
         }
         .banner {
             position: fixed;
@@ -130,27 +132,32 @@
 </head>
 <body>
     <div class="content-container">
-
-        <!-- Replace "your-image.png" with the actual file path or URL of your PNG image -->
-        <img src="greg.png" alt="Your Image Description">
-    	<img class="top-image" src="ticket.jpg" alt="Top Image Description">
+        <img class="top-image" src="ticket.jpg" alt="Top Image Description">
         
+        <div class="page-container">
+            <!-- Replace "your-image.png" with the actual file path or URL of your PNG image -->
+            <img src="greg.png" alt="Your Image Description">
 
-        <!-- Add text below the image -->
-        <p>Manchester<br>Annual UniRider</p>
+            <!-- Add text below the image -->
+            <p>Manchester<br>Annual UniRider</p>
 
-	<!-- Add overlay text directly in the body -->
-        <div class="overlay-text">Student</div>
-	<div class="overlay-text">Student</div>
-        <div class="overlay-text">Student</div>
-        <div class="overlay-text">Student</div>
-        <div class="overlay-text">Student</div>
-        <div class="overlay-text">Student</div>
-	<div class="banner">
-        	 <span id="countdown">20:00</span>  
-   	<div class="color-picker-container">
-        Banner Color: <input type="color" id="bannerColorPicker" value="#333" onchange="changeBannerColor()">
+            <!-- Add overlay text directly in the body -->
+            <div class="overlay-text">Student</div>
+            <div class="overlay-text">Student</div>
+            <div class="overlay-text">Student</div>
+            <div class="overlay-text">Student</div>
+            <div class="overlay-text">Student</div>
+            <div class="overlay-text">Student</div>
+        </div>
     </div>
+
+    <div class="banner">
+        Countdown Timer: <span id="countdown">20:00</span>
+        <div class="color-picker-container">
+            Banner Color: <input type="color" id="bannerColorPicker" value="#333" onchange="changeBannerColor()">
+        </div>
+    </div>
+
 
 
     </div>
