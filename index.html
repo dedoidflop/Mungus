@@ -35,7 +35,6 @@
         }
 
 
-
         .content-container {
             text-align: center;
             position: relative;
@@ -47,35 +46,40 @@
             left: 22.5%;
             transform: translate(-50%, -50%)rotate(-36deg);
             color: #ffffff;
-            font-size: 25px;
+            font-size: 30px;
             font-weight: 400;
-            opacity: 0.8;
+            opacity: 0.6;
             z-index: -1;
         }
 
         .overlay-text:nth-child(7) {
             top: 35%;
             left: 76.8%;
+	    <!--TOP RIGHT-->
         }
 
         .overlay-text:nth-child(3) {
             top: 55%;
             left: 77%;
+	    <!--MIDDLE RIGHT-->
         }
 
         .overlay-text:nth-child(4) {
-            top: 60%;
+            top: 55%;
             left: 21.2%;
+	    <!--MIDDLE LEFT-->
         }
 
         .overlay-text:nth-child(5) {
             top: 76%;
             left: 78%;
+	    <!--BOTTOM RIGHT-->
         }
 
         .overlay-text:nth-child(6) {
             top: 36.5%;
             left: 20%;
+	    <!--TOP LEFT-->
         }
 
         img {
@@ -136,7 +140,7 @@
                 transform: rotate(0);
             }
             75% {
-                transform: rotate(-10deg);
+                transform: rotate(-9deg);
             }
         }
 
@@ -157,6 +161,10 @@
 <body>
     <div class="content-container">
         <img class="top-image" src="ticket.jpg" alt="">
+
+
+
+
         
         <div class="page-container">
             <!-- Replace "your-image.png" with the actual file path or URL of your PNG image -->
@@ -164,9 +172,6 @@
 
             <!-- Add text below the image -->
             <p>Manchester<br>Annual UniRider</p>
-
-	    <div class="line"></div>
-	    <div class="line"></div>
 
 
 
@@ -178,6 +183,11 @@
             <div class="overlay-text">Student</div>
             <div class="overlay-text">Student</div>
             <div class="overlay-text">Student</div>
+
+		<div class="line"></div>
+		<div class="line"></div>
+
+
         </div>
     </div>
 
