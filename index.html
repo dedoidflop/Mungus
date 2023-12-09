@@ -9,35 +9,51 @@
 	    font-family: Helvetica, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #9fcce0; /* Light blue background color */
+            background-color: #9fcce0;
             display: flex;
-            flex-direction: column; /* Stack children vertically */
+            flex-direction: column;
             align-items: center;
-            height: 70vh;
-            position: relative; /* Add relative positioning to the body for absolute positioning of the overlay text */
-	    overflow: hidden;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
 
+        .color-picker-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            text-align: center;
+        }
+
+        .color-picker-button {
+            width: 50px;
+            height: 20px;
+            cursor: pointer;
+            z-index: -1; /* Set a higher z-index to place it in front of other elements */
+    	    background: transparent; /* Set the background to transparent */
+    	    border: none; /* Set the border to transparent */
 
         }
+
+
+
         .content-container {
-            text-align: center; /* Center content within the container */
-            position: relative; /* Ensure relative positioning for child elements */
-
-
-
+            text-align: center;
+            position: relative;
         }
 
-	.overlay-text {
+        .overlay-text {
             position: absolute;
             top: 76%;
             left: 22.5%;
             transform: translate(-50%, -50%)rotate(-37deg);
-            color: #ffffff; /* White text color */
+            color: #ffffff;
             font-size: 25px;
             font-weight: 400;
-            opacity: 0.8; /* Adjust the opacity as needed (0.0 to 1.0) */
-            z-index: -1; /* Set a higher z-index to place it in front of the image */
+            opacity: 0.8;
+            z-index: -1;
         }
+
         .overlay-text:nth-child(7) {
             top: 35%;
             left: 76.8%;
@@ -66,66 +82,55 @@
         img {
             max-width: 49%;
             height: auto;
-            margin-top: 0px; /* Adjust the margin to position the image closer to the top */
-
+            margin-top: 0px;
         }
-	.top-image {
-            max-width: 102%; /* Set the desired width */
+
+        .top-image {
+            max-width: 102%;
             height: auto;
 	    z-index: 5;
     	    margin-bottom: 20px;
         }
+
         .banner {
-	    margin-top:55px
+            margin-top: 120%;
             position: fixed;
-            top: 50;
+            top: 50px;
             left: -5%;
             width: 110%;
-            background-color: #333; /* Banner background color */
-            color: #fff; /* Text color */
+            background-color: #333;
+            color: #fff;
             text-align: center;
-            padding: 10px; /* Adjust padding as needed */
-            z-index: 1000; /* Set a higher z-index to place it above other elements */
-            animation: countdown 1200s linear forwards; /* 20 minutes countdown animation */
-            animation: rotateBanner 10s linear infinite, countdown 1200s linear forwards; /* Rotate left and right by 10 degrees every 10 seconds and countdown animation */
-
+            padding: 20px;
+            z-index: 1000;
+            animation: rotateBanner 10s linear infinite, countdown 1200s linear forwards;
         }
-    	@keyframes rotateBanner {
-        	0%, 100% {
-            	transform: rotate(0);
-        	}
-        	25% {
-            	transform: rotate(10deg); /* Rotate left by 10 degrees in the first 5 seconds */
-        	}
-        	50% {
-            	transform: rotate(0); /* Back to the initial rotation */
-        	}
-        	75% {
-            	transform: rotate(-10deg); /* Rotate right by 10 degrees in the next 5 seconds */
-        	}
-    	}
 
+        @keyframes rotateBanner {
+            0%, 100% {
+                transform: rotate(0);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            50% {
+                transform: rotate(0);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
         }
-	@keyframes countdown {
+
+        @keyframes countdown {
             from { width: 100%; }
             to { width: 0%; }
         }
 
-	p {
-            margin-top: 18px; /* Adjust the margin to create space between the image and the text */
-            font-size: 24px; /* Adjust the font size as needed */
-            font-weight: 500; /* Make the text bold ,400-700 */
-            letter-spacing: 0px; /* Add slight horizontal stretching */
-        }
-
-        /* Additional styles for the color picker */
-        .color-picker-container {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        input[type="color"] {
-            margin-right: 10px;
+        p {
+            margin-top: 18px;
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 0px;
         }
 
     </style>
@@ -151,12 +156,12 @@
         </div>
     </div>
 
+    <div class="color-picker-container">
+        <input type="color" class="color-picker-button" onchange="changeBannerColor()">
+    </div>
+
     <div class="banner">
         Countdown Timer: <span id="countdown">20:00</span>
-        <div class="color-picker-container">
-            Banner Color: <input type="color" id="bannerColorPicker" value="#333" onchange="changeBannerColor()">
-    	    <button onclick="changeBannerColor()">Confirm</button>
-        </div>
     </div>
 
 
