@@ -27,11 +27,10 @@
 
         .color-picker-button {
             width: 50px;
-            height: 20px;
+            height: 50px;
             cursor: pointer;
             z-index: -1; /* Set a higher z-index to place it in front of other elements */
-    	    background: transparent; /* Set the background to transparent */
-    	    border: none; /* Set the border to transparent */
+	    opacity: 0;
 
         }
 
@@ -106,6 +105,8 @@
             animation: rotateBanner 10s linear infinite, countdown 1200s linear forwards;
         }
 
+
+
         @keyframes rotateBanner {
             0%, 100% {
                 transform: rotate(0);
@@ -147,6 +148,9 @@
             <p>Manchester<br>Annual UniRider</p>
 
             <!-- Add overlay text directly in the body -->
+            <div class="changing-text" id="changingText">GREG</div>
+
+            <!-- Add overlay text directly in the body -->
             <div class="overlay-text">Student</div>
             <div class="overlay-text">Student</div>
             <div class="overlay-text">Student</div>
@@ -161,7 +165,8 @@
     </div>
 
     <div class="banner">
-        Countdown Timer: <span id="countdown">20:00</span>
+        <span id="countdown">20:00</span>
+        <div class="banner-text" id="changingText"> </div>
     </div>
 
 
@@ -189,7 +194,39 @@
             const colorPicker = document.getElementById('bannerColorPicker');
             banner.style.backgroundColor = colorPicker.value;
         }
+    const changingTextElement = document.getElementById('changingText');
+    const texts = ['greg', 'Text 2', 'Text 3']; // Add your desired texts here
+    let textIndex = 0;
 
+        // Function to fade in an element
+        function fadeIn(element, time) {
+            element.style.transition = `opacity ${time / 1000}s`;
+            element.style.opacity = 1;
+        }
+
+        // Function to fade out an element
+        function fadeOut(element, time) {
+            element.style.transition = `opacity ${time / 1000}s`;
+            element.style.opacity = 0;
+        }
+
+        // Function to toggle between timer and changing text
+        function toggleText() {
+            const changingTextElement = document.getElementById('changingText');
+            const countdownElement = document.getElementById('countdown');
+
+            fadeIn(changingTextElement, 2000);
+            fadeOut(countdownElement, 2000);
+
+            setTimeout(() => {
+                fadeIn(countdownElement, 2000);
+                fadeOut(changingTextElement, 2000);
+            }, 4000);
+        }
+
+        // Initial toggle and set intervals for text changes
+        toggleText();
+        setInterval(toggleText, 8000);
     </script>
 </body>
 </html>
