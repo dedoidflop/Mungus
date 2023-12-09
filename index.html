@@ -45,7 +45,7 @@
             position: absolute;
             top: 76%;
             left: 22.5%;
-            transform: translate(-50%, -50%)rotate(-37deg);
+            transform: translate(-50%, -50%)rotate(-36deg);
             color: #ffffff;
             font-size: 25px;
             font-weight: 400;
@@ -64,7 +64,7 @@
         }
 
         .overlay-text:nth-child(4) {
-            top: 55%;
+            top: 60%;
             left: 21.2%;
         }
 
@@ -90,13 +90,23 @@
 	    z-index: 5;
     	    margin-bottom: 20px;
         }
+	.line {
+    	    width: 90%;
+    	    height: 1px;
+    	    background-color: #A9A9A9;
+    	    margin-top: 35px;
+    	    margin-left: 6%; /* Add this line to move the line to the right */
+
+	    
+	}
 
         .banner {
             margin-top: 120%;
             position: fixed;
             top: 50px;
             left: -5%;
-            width: 110%;
+            width: 140%;
+	    height: 3.5%;
             background-color: #333;
             color: #fff;
             text-align: center;
@@ -104,7 +114,15 @@
             z-index: 1000;
             animation: rotateBanner 10s linear infinite, countdown 1200s linear forwards;
         }
+        #countdown, #changingText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
 
+
+        }
 
 
         @keyframes rotateBanner {
@@ -147,8 +165,11 @@
             <!-- Add text below the image -->
             <p>Manchester<br>Annual UniRider</p>
 
-            <!-- Add overlay text directly in the body -->
-            <div class="changing-text" id="changingText">GREG</div>
+	    <div class="line"></div>
+	    <div class="line"></div>
+
+
+
 
             <!-- Add overlay text directly in the body -->
             <div class="overlay-text">Student</div>
@@ -166,7 +187,7 @@
 
     <div class="banner">
         <span id="countdown">20:00</span>
-        <div class="banner-text" id="changingText"> </div>
+        <div class="changing-text" id="changingText">Greg</div>
     </div>
 
 
@@ -194,11 +215,9 @@
             const colorPicker = document.getElementById('bannerColorPicker');
             banner.style.backgroundColor = colorPicker.value;
         }
-    const changingTextElement = document.getElementById('changingText');
-    const texts = ['greg', 'Text 2', 'Text 3']; // Add your desired texts here
-    let textIndex = 0;
 
-        // Function to fade in an element
+
+// Function to fade in an element
         function fadeIn(element, time) {
             element.style.transition = `opacity ${time / 1000}s`;
             element.style.opacity = 1;
@@ -215,12 +234,12 @@
             const changingTextElement = document.getElementById('changingText');
             const countdownElement = document.getElementById('countdown');
 
-            fadeIn(changingTextElement, 2000);
-            fadeOut(countdownElement, 2000);
+            fadeIn(countdownElement, 2000);
+            fadeOut(changingTextElement, 2000);
 
             setTimeout(() => {
-                fadeIn(countdownElement, 2000);
-                fadeOut(changingTextElement, 2000);
+                fadeIn(changingTextElement, 2000);
+                fadeOut(countdownElement, 2000);
             }, 4000);
         }
 
