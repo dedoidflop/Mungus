@@ -9,7 +9,14 @@
 	    font-family: Helvetica, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #9fcce0;
+            background-color: #afd3e3;
+            background: linear-gradient(
+              to top,
+              #afd3e3 0%,
+              #afd3e3 90%,
+              #181e2a 90%,
+              #181e2a 100%
+            );
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -399,7 +406,7 @@
 
 
 
-		<div class="poop-text">Ticket expires in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 200d : 0h : 22m : 10s</div>
+		<div class="poop-text">Ticket expires in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 200d : 0h : 22m : <span id="seconds">10</span>s</div>
 		<div class="queef-text">Must be used with Student ID Card. For students aged 16 and over who are in higher or further education.</div>
 
 		<div class="white-box">
@@ -452,6 +459,27 @@
     	    inputContainer.classList.remove('active');
 	});
     
+
+	function updateSeconds() {
+        	const secondsElement = document.getElementById('seconds');
+        	let currentSeconds = parseInt(secondsElement.textContent);
+
+        	// Update the seconds and restart from 10 when it reaches 0
+        	currentSeconds = (currentSeconds - 1 + 10) % 10;
+
+        	// Update the text content
+        	secondsElement.textContent = currentSeconds;
+    	}
+
+    	// Initial call to start the countdown
+    	updateSeconds();
+
+    	// Set interval to update seconds every second
+    	setInterval(updateSeconds, 1000);
+
+
+
+
     // JavaScript code to create and animate translucent white bubbles
     function createBubble() {
         const bubble = document.createElement('div');
