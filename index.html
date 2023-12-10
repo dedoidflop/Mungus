@@ -35,13 +35,13 @@
 
         @keyframes floatBubble {
             0% {
-                transform: translateY(-30px) translateX(10px);
+                transform: translateY(-20px) translateX(-30px);
             }
             50% {
                 transform: translateY(20px) translateX(20px);
             }
             100% {
-                transform: translateY(-20) translateX(-10);
+                transform: translateY(-20px) translateX(-30px);
             }
         }
         .input-container {
@@ -167,6 +167,14 @@
 	    z-index: 5;
     	    margin-bottom: 20px;
         }
+        .spogus-image {
+    	    position: absolute;
+            max-width: 7.5%;
+            height: auto;
+	    z-index: 5;
+    	    margin-top: -2px;
+    	    margin-left: -170px;
+        }
 	.line {
     	    width: 90%;
     	    height: 1px;
@@ -183,11 +191,62 @@
     	    color: #000; /* Set the color of the brand text */
     	    font-weight: 500;
 	}
+	.greg-text {
+    	    position: absolute;
+    	    bottom: -40px;
+    	    left:25%;
+    	    font-size: 16px;
+    	    color: #000; /* Set the color of the brand text */
+    	    font-weight: 500;
+	}
+	.poop-text {
+    	    position: absolute;
+    	    bottom: -170px;
+    	    left:13%;
+    	    font-size: 16px;
+    	    color: #000; /* Set the color of the brand text */
+    	    font-weight: 500;
+	}
+	.queef-text {
+    	    position: absolute;
+    	    bottom: -220px;
+    	    left:9%;
+    	    font-size: 14px;
+    	    color: #000; /* Set the color of the brand text */
+    	    font-weight: 500;
+	    text-align: left;
+	}
+    	.white-box {
+    	    position: absolute;
+
+            background-color: #fff;
+            border-radius: 13px; /* Adjust the border-radius for rounded edges */
+            padding: 5px; /* Adjust the padding as needed */
+            margin-top: 238px; /* Adjust the margin as needed */
+            margin-left: 28px; /* Adjust the margin as needed */
+            width: 80%; /* Adjust the width as needed */
+            text-align: center; /* Center text within the box */
+    	}
+	.box-text {
+    	    font-size: 14px;
+    	    color: #000; /* Set the color of the brand text */
+    	    font-weight: 500;
+
+	}
+	.green-text {
+    	    position: absolute;
+    	    bottom: -300px;
+    	    left:37%;
+    	    font-size: 15px;
+    	    color: #00A300; /* Set the color of the brand text */
+    	    font-weight: 500;
+
+	}
 	    
 
 
         .banner {
-            margin-top: 120%;
+            margin-top: 118%;
             position: fixed;
             top: 50px;
             left: -5%;
@@ -199,16 +258,78 @@
             padding: 20px;
             z-index: 1000;
             overflow: hidden ;
-            animation: rotateBanner 10s linear infinite, countdown 1200s linear forwards;
+            animation: rotateBanner 10s linear infinite;
         }
-        #countdown, #changingText {
+	.fade-element {
+    	    position: absolute;
+    	    top: 50%;
+    	    left: 50%;
+    	    font-size: 30px;
+    	    font-weight: 500;
+    	    z-index: 100;
+    	    opacity: 0;
+    	    animation: fadeOutIn 8s  infinite; /* 1 second in, 4 seconds stay, 2 seconds out */
+
+	}
+	.fade-text {
+    	    position: absolute;
+    	    top: 50%;
+    	    left: 50%;
+    	    font-size: 30px;
+    	    font-weight: 500;
+    	    z-index: 100;
+    	    opacity: 0;
+            animation: fadeInOut 8s  infinite; /* 1 second in, 4 seconds stay, 2 seconds out */
+        
+	}
+        #datetime, #changingText {
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 37.5%;
             transform: translate(-50%, -50%);
             font-size: 30px;
 	    font-weight: 500;
 	    z-index:1001
+
+        }
+
+        /* Animation for fading in/out */
+        @keyframes fadeOutIn {
+    	    0% {
+        	opacity: 0;
+    	    }
+	    12.5%,37.5%{
+		opacity: 1;
+    	    }
+
+	    50%{
+		opacity: 0;
+    	    }
+
+
+    	    100% {
+       		opacity: 0;
+    	    }
+
+        }
+
+        /* Animation for fading in/out */
+        @keyframes fadeInOut {
+    	    0% {
+        	opacity: 0;
+    	    }
+	    50%{
+		opacity: 0;
+    	    }
+
+	    62.5%,87.5%{
+		opacity: 1;
+    	    }
+
+    	    100% {
+       		opacity: 0;
+    	    }
+
 
         }
 
@@ -228,10 +349,7 @@
             }
         }
 
-        @keyframes countdown {
-            from { width: 100%; }
-            to { width: 0%; }
-        }
+
 
         p {
             margin-top: 18px;
@@ -243,7 +361,7 @@
     </style>
 </head>
 <body>
-
+    
     <div class="content-container">
         <img class="top-image" src="ticket.jpg" alt="">
 
@@ -271,8 +389,25 @@
             <div class="overlay-text">Student</div>
 
 		<div class="line"></div>
-		<div class="brand-text">Davigdor Smooth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;£330.00</div>
+		<img class="spogus-image" src="spogus.png" alt="">
+
+		<div class="brand-text">&nbsp;&nbsp;&nbsp;&nbsp;Davigdor Smooth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;£330.00</div>
 		<div class="line"></div>
+	
+		<div class="greg-text">Valid from:00:00, 26 Sep 2023</div>
+
+
+
+
+		<div class="poop-text">Ticket expires in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 200d : 0h : 22m : 10s</div>
+		<div class="queef-text">Must be used with Student ID Card. For students aged 16 and over who are in higher or further education.</div>
+
+		<div class="white-box">
+    			<div class="box-text">1237-49584930674843-234</div>
+		</div> 
+		<div class="green-text"> More details > </div>
+
+
 
 
         </div>
@@ -289,12 +424,12 @@
 
     <div class="input-container">
     	<span class="input-prompt"></span>
-	<input type="text" id="textInput" class="input-text" placeholder="Type here...">
+	<input type="text" id="textInput" class="input-text" placeholder="Type here..."> 
     </div>
 
     <div class="banner">
-        <span id="countdown">20:00</span>
-        <div class="changing-text" id="changingText">Click top left</div>
+        <span class="fade-element"id="datetime"></span>
+        <div class="fade-text" id="changingText">Click top left</div>
     	<div class="bubble-container">
         	<!-- Add multiple bubble elements dynamically with JavaScript -->
     	</div>
@@ -304,8 +439,19 @@
 
     </div>
     <script>
+	//REMOVING TEXT INPUT BOX
+	const inputContainer = document.querySelector('.input-container');
+	const inputText = document.querySelector('.input-text');
 
 
+	inputText.addEventListener('focus', () => {
+    	    inputContainer.classList.add('active');
+	});
+
+	inputText.addEventListener('blur', () => {
+    	    inputContainer.classList.remove('active');
+	});
+    
     // JavaScript code to create and animate translucent white bubbles
     function createBubble() {
         const bubble = document.createElement('div');
@@ -337,7 +483,7 @@
 
     // Function to generate 12 bubbles
     function generateBubbles() {
-        for (let i = 0; i < 11; i++) {
+        for (let i = 0; i < 14; i++) {
             createBubble();
         }
     }
@@ -345,33 +491,72 @@
     // Call the generateBubbles function
     generateBubbles();
 
+// Function to fade in an element
+        function fadeIn(element, duration) {
+            // Set the initial opacity to 0
+            element.style.opacity = 0;
+
+            // Set the transition property for opacity
+            element.style.transition = `opacity ${duration / 1000}s`;
+
+            // Gradually increase the opacity to 1
+            element.style.opacity = 1;
+        }
+        function fadeOut(element, duration) {
+            // Set the initial opacity to 0
+            element.style.opacity = 0;
+
+            // Set the transition property for opacity
+            element.style.transition = `opacity ${duration / 1000}s`;
+
+            // Gradually increase the opacity to 1
+            element.style.opacity = 1;
+        }
 
 
 
-	const inputContainer = document.querySelector('.input-container');
-	const inputText = document.querySelector('.input-text');
 
-	inputText.addEventListener('focus', () => {
-    	    inputContainer.classList.add('active');
-	});
 
-	inputText.addEventListener('blur', () => {
-    	    inputContainer.classList.remove('active');
-	});
-        // JavaScript code to dynamically update countdown timer
-        const countdownElement = document.getElementById('countdown');
-        let countdownTime = 1200; // 20 minutes in seconds
+        // Function to toggle bet    
 
-        setInterval(() => {
-            const minutes = Math.floor(countdownTime / 60);
-            const seconds = countdownTime % 60;
 
-            countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-            
-            if (countdownTime > 0) {
-                countdownTime--;
-            }
-        }, 1000);
+
+
+        function toggleText() {
+            const changingTextElement = document.getElementById('changingText');
+            const datetimeElement = document.getElementById('datetime');
+
+
+    	    // Get the current time
+  	    var now = new Date();
+
+            var formattedTime = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            datetimeElement.innerHTML = formattedTime;
+
+
+    	    // Display the current time with fade in/out effect
+    	    currentTimeElement.textContent = formattedTime;
+
+
+
+            // Display the current time with fade in effect
+            fadeIn(formattedTime, 2000);
+            fadeOut(changingTextElement, 2000);
+
+            setTimeout(() => {
+                fadeIn(changingTextElement, 2000);
+                fadeOut(formattedTime, 2000);
+            }, 4000);
+        }
+
+        // Initial toggle and set intervals for text changes
+        toggleText();
+
+
+
+
+
 
 
         function updateBanner() {
@@ -393,37 +578,7 @@
         }
 
 
-// Function to fade in an element
-        function fadeIn(element, time) {
-            element.style.transition = `opacity ${time / 1000}s`;
-            element.style.opacity = 1;
-        }
-
-        // Function to fade out an element
-        function fadeOut(element, time) {
-            element.style.transition = `opacity ${time / 1000}s`;
-            element.style.opacity = 0;
-        }
-
-
-
-        // Function to toggle between timer and changing text
-        function toggleText() {
-            const changingTextElement = document.getElementById('changingText');
-            const countdownElement = document.getElementById('countdown');
-
-            fadeIn(countdownElement, 2000);
-            fadeOut(changingTextElement, 2000);
-
-            setTimeout(() => {
-                fadeIn(changingTextElement, 2000);
-                fadeOut(countdownElement, 2000);
-            }, 4000);
-        }
-
-        // Initial toggle and set intervals for text changes
-        toggleText();
-        setInterval(toggleText, 8000);
+	
     </script>
 </body>
 </html>
