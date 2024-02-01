@@ -268,7 +268,11 @@
             padding: 20px;
             z-index: 1000;
             overflow: hidden ;
-            animation: rotateBanner 10s linear infinite;
+            <!--animation: rotateBanner 10s linear infinite;-->
+            transform-origin: center center;
+            transition: transform 0.1s ease-out; /* Optional: Add smooth transition */
+
+
         }
 	.fade-element {
     	    position: absolute;
@@ -588,8 +592,6 @@
 
 
 
-
-
         function updateBanner() {
             const textInput = document.getElementById('textInput');
             const changingTextElement = document.getElementById('changingText');
@@ -598,6 +600,13 @@
 
             changingTextElement.textContent = textInput.value;
             banner.style.backgroundColor = colorPicker.value;
+
+            const rotationZ = event.gamma; // gamma represents the left-to-right motion (roll)
+            // Apply the rotation to the .banner element
+            banner.style.transform = `translate(-50%, -50%) rotateZ(${rotationZ}deg)`;
+	    
+
+
         }
 
 
