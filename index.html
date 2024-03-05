@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#181d2a"/>
-    <title>Your Website Title</title>
+    <title>Settings Menu</title>
     <style>
         body {
+
 	    font-family: Helvetica, sans-serif;
             margin: 0;
             padding: 0;
@@ -17,10 +17,12 @@
               #181d2a 90%,
               #181d2a 100%
             );
+            border:10px solid #181d2a; /* Set the border properties (adjust size and color as needed) */
+
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 110vh;
+            height: 100vh;
             position: relative;
             overflow: auto;
         }
@@ -51,69 +53,6 @@
                 transform: translateY(-20px) translateX(-30px);
             }
         }
-        .input-container {
-            position: fixed;
-            top: 18px;
-            left: 25px;
-            display: flex;
-            align-items: center;
-	    color: #ffffff; 
-	    opacity:0;
-
-        }
-	.input-container.active {
-    	    opacity: 1;
-	}
-
-	.input-text {
-    	    background-color: transparent; /* Set the background color to transparent */
-    	    color: white; /* Set the text color to white */
-    	    border: 0px solid white; /* Add a white border for better visibility */
-    	    padding: 5px; /* Adjust padding for better visual appearance */
-	}
-
-
-
-
-        .color-picker-container {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            text-align: center;
-        }
-
-        .color-picker-button {
-            width: 60px;
-            height: 50px;
-            cursor: pointer;
-            z-index: -1; /* Set a higher z-index to place it in front of other elements */
-	    opacity: 0;
-
-        }
-
-        .confirm-container {
-            position: absolute;
-            top: 50px;
-            right: 100px;
-            display: flex;
-            align-items: center;
-        }
-        .confirm-button {
-            cursor: pointer;
-            margin-top: 60px; /* Add margin to separate the color picker and the confirm button */
-            width: 200px;
-            height: 200px;
-	    opacity: 0;
-        }
-
-	#textInput {
-	    margin-top: 3px;
-    	    margin-right: 10px;
-    	    font-size: 25px; /* Adjust the font size as needed */
-	    opacity: 0.5;
-	    width:100px;
-	}
-
 
         .content-container {
             text-align: center;
@@ -182,16 +121,34 @@
             max-width: 7.5%;
             height: auto;
 	    z-index: 5;
-    	    margin-top: -2px;
-    	    margin-left: -170px;
+    	    margin-top: -1px;
+    	    margin-left: -167px;
         }
 	.line {
     	    width: 90%;
     	    height: 1px;
     	    background-color: #A9A9A9;
-    	    margin-top: 35px;
+    	    margin-top: 37px;
     	    margin-left: 6%; /* Add this line to move the line to the right */
 	}
+
+
+
+
+
+	.name-text {
+    	    position: absolute;
+    	    bottom: 7px;
+    	    left: 10%;
+    	    font-size: 20px;
+    	    color: #000; /* Set the color of the brand text */
+    	    font-weight: 500;
+	}
+
+
+
+
+
 
 	.brand-text {
     	    position: absolute;
@@ -252,20 +209,27 @@
     	    font-weight: 500;
 
 	}
+
+	.bottom-line {
+    	    position: absolute;
+	    width: 100%;
+    	    bottom: -385px;
+    	    height: 50px;
+    	    background-color: #181d2a;
+
+	}
 	    
-
-
         .banner {
             margin-top: 118%;
             position: fixed;
             top: 50px;
-            left: -5%;
-            width: 140%;
+            left: 2%;
+            width: 87%;
 	    height: 30px;
             background-color: #333;
             color: #000;
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             z-index: 1000;
             overflow: hidden ;
             animation: rotateBanner 10s linear infinite;
@@ -274,11 +238,12 @@
 
 
         }
+
 	.fade-element {
     	    position: absolute;
     	    top: 50%;
     	    left: 50%;
-    	    font-size: 30px;
+    	    font-size: 20px;
     	    font-weight: 500;
     	    z-index: 100;
     	    opacity: 0;
@@ -287,25 +252,32 @@
 	}
 	.fade-text {
     	    position: absolute;
-    	    top: 50%;
-    	    left: 50%;
-    	    font-size: 30px;
+    	    font-size: 20px;
     	    font-weight: 500;
     	    z-index: 100;
     	    opacity: 0;
             animation: fadeInOut 8s  infinite; /* 1 second in, 4 seconds stay, 2 seconds out */
         
 	}
-        #datetime, #changingText {
+        #datetime{
             position: absolute;
             top: 50%;
-            left: 37.5%;
-            transform: translate(-50%, -50%);
-            font-size: 30px;
-	    font-weight: 500;
+            left: 38%;
+            transform: translate(0%, -50%);
+            font-size: 36px;
+	    font-weight: 600;
 	    z-index:1001
 
         }
+	#changingText{
+            top: 50%;
+            left: 37%;
+            transform: translate(0%, -50%);
+            font-size: 36px;
+	    font-weight: 600;
+	    z-index:1001
+	}
+
 
         /* Animation for fading in/out */
         @keyframes fadeOutIn {
@@ -372,14 +344,64 @@
             letter-spacing: 0px;
         }
 
+
+
+
+
+
+        /* Style for the settings menu */
+        #settingsMenu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        /* Style for the button */
+        #settingsButton {
+            padding: 90px 75px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+	    opacity: 0;
+
+
+            position: absolute;
+            top: 124px;
+            right: 87px;
+            display: flex;
+            align-items: center;
+
+
+
+        }
+        #color-box {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #000;
+            margin-right: 10px;
+        }
+
     </style>
 </head>
 <body>
-    
+
+
+
+
+
+
+
+
+
     <div class="content-container">
         <img class="top-image" src="ticket.jpg" alt="">
-
-      
+        
+	      
 
 
         
@@ -406,6 +428,8 @@
 		<img class="spogus-image" src="spogus.png" alt="">
 
 		<div class="brand-text">&nbsp;&nbsp;&nbsp;&nbsp;Davigdor Smooth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;£330.00</div>
+
+
 		<div class="line"></div>
 	
 		<div class="greg-text">Valid from:00:00, 26 Sep 2023</div>
@@ -421,29 +445,18 @@
 		</div> 
 		<div class="green-text"> More details > </div>
 
+		<div class="bottom-line"></div>
+
+
 
 
 
         </div>
     </div>
-    <div class="confirm-container">
-            <div class="confirm-button" onclick="updateBanner()">Confirm</div>
-    </div>
-
-    <div class="color-picker-container">
-        <input type="color" class="color-picker-button" id="bannerColorPicker" onchange="changeBannerColor()">
-
-    </div>
-
-
-    <div class="input-container">
-    	<span class="input-prompt"></span>
-	<input type="text" id="textInput" class="input-text" placeholder="Type here..."> 
-    </div>
 
     <div class="banner">
         <span class="fade-element"id="datetime"></span>
-        <div class="fade-text" id="changingText">Click top left</div>
+        <div class="fade-text" id="changingText"></div>
     	<div class="bubble-container">
         	<!-- Add multiple bubble elements dynamically with JavaScript -->
     	</div>
@@ -452,21 +465,82 @@
 
 
     </div>
+
+
+
+
+    <!-- Button that opens the settings menu -->
+    <button id="settingsButton" onclick="toggleSettings()">Settings</button>
+
+    <!-- Settings menu -->
+    <div id="settingsMenu">
+        <p>Poopy Scoopy</p>
+        <!-- Add your settings options here -->
+
+        <div id="color-box"></div>
+
+        <select id="color-select" onchange="changeColor()">
+            <option value="#eb992f">Orange</option>
+            <option value="#4293a8">Blue</option>
+            <option value="#37cf29">Green</option>
+            <option value= #9a9a9c >Grey</option>
+            <option value="#ba1c59">Pink</option>
+        </select>
+        <label for="word">Enter a word:</label>
+        <input type="text" id="word" placeholder="Type here">
+
+        <label for="newName">Enter name:</label>
+        <input type="text" id="newName" placeholder="Davigdor Smooth">
+
+    	<button onclick="saveValues()">Ok</button>
+
+
+    </div>
+
+
     <script>
-	//REMOVING TEXT INPUT BOX
-	const inputContainer = document.querySelector('.input-container');
-	const inputText = document.querySelector('.input-text');
+        function changeColor() {
+            const colorBox = document.getElementById('color-box');
+            const colorSelect = document.getElementById('color-select');
+            colorBox.style.backgroundColor = colorSelect.value;
+        }
+
+        // JavaScript to toggle the visibility of the settings menu
+        function toggleSettings() {
+            var settingsMenu = document.getElementById("settingsMenu");
+            if (settingsMenu.style.display == "none") {
+                settingsMenu.style.display = "block";
+            } else {
+                settingsMenu.style.display = "none";
+            }
+        }
+	function saveValues() {
+            settingsMenu.style.display = "none";
+
+            const textInput = document.getElementById('word');
+            const changingTextElement = document.getElementById('changingText');
+            const colorPicker = document.getElementById('color-select');
+            const banner = document.querySelector('.banner');
 
 
-	inputText.addEventListener('focus', () => {
-    	    inputContainer.classList.add('active');
-	});
 
-	inputText.addEventListener('blur', () => {
-    	    inputContainer.classList.remove('active');
-	});
-    
 
+
+	    
+            changingTextElement.textContent = textInput.value;
+            banner.style.backgroundColor = colorPicker.value;
+	} 
+	/* FIXERUPPER */
+        window.addEventListener("click", (event) => {
+        	document.documentElement.requestFullscreen().catch((e) => {
+        		console.log(e);
+        	});
+        });
+
+	/* FIXERUPPER */
+
+
+	
 	function updateSeconds() {
         	const secondsElement = document.getElementById('seconds');
         	let currentSeconds = parseInt(secondsElement.textContent);
@@ -493,7 +567,7 @@
         bubble.className = 'bubble';
 
         // Randomize bubble size between 10px and 40px
-        const size = Math.floor(Math.random() * (60- 8 + 1)) + 10;
+        const size = Math.floor(Math.random() * (60- 15)) + 15;
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
 
@@ -505,8 +579,8 @@
         bubble.style.left = `${positionX}px`;
         bubble.style.top = `${positionY}px`;
 
-        // Randomize bubble opacity between 0.2 and 0.8
-        const opacity = Math.random() * (0.8 - 0.2) + 0.2;
+        // Randomize bubble opacity between 0.4 and 0.9
+        const opacity = Math.random() * (0.9 - 0.5) + 0.5;
         bubble.style.opacity = opacity;
 
         // Set bubble background color to translucent white
@@ -516,9 +590,9 @@
         document.querySelector('.banner').appendChild(bubble);
     }
 
-    // Function to generate 12 bubbles
+    // Function to generate 16 bubbles
     function generateBubbles() {
-        for (let i = 0; i < 14; i++) {
+        for (let i = 0; i < 16; i++) {
             createBubble();
         }
     }
@@ -588,30 +662,7 @@
         // Initial toggle and set intervals for text changes
         toggleText();
 
-
-
-        function updateBanner() {
-            const textInput = document.getElementById('textInput');
-            const changingTextElement = document.getElementById('changingText');
-            const colorPicker = document.getElementById('bannerColorPicker');
-            const banner = document.querySelector('.banner');
-
-            changingTextElement.textContent = textInput.value;
-            banner.style.backgroundColor = colorPicker.value;
-
-
-        }
-
-
-        // JavaScript function to change banner color based on the color picker
-        function changeBannerColor() {
-            const banner = document.querySelector('.banner');
-            const colorPicker = document.getElementById('bannerColorPicker');
-            banner.style.backgroundColor = colorPicker.value;
-        }
-
-
-	
     </script>
+
 </body>
 </html>
