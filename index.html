@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#181d2a"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"> 
-	
     <title>Your Website Title</title>
     <style>
         body {
@@ -19,12 +17,10 @@
               #181d2a 90%,
               #181d2a 100%
             );
-            border:10px solid #181d2a; /* Set the border properties (adjust size and color as needed) */
-
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh;
+            height: 110vh;
             position: relative;
             overflow: auto;
         }
@@ -256,16 +252,9 @@
     	    font-weight: 500;
 
 	}
-
-	.bottom-line {
-    	    position: absolute;
-	    width: 100%;
-    	    bottom: -385px;
-    	    height: 50px;
-    	    background-color: #181d2a;
-
-	}
 	    
+
+
         .banner {
             margin-top: 118%;
             position: fixed;
@@ -285,7 +274,6 @@
 
 
         }
-
 	.fade-element {
     	    position: absolute;
     	    top: 50%;
@@ -313,8 +301,8 @@
             top: 50%;
             left: 37.5%;
             transform: translate(-50%, -50%);
-            font-size: 36px;
-	    font-weight: 600;
+            font-size: 30px;
+	    font-weight: 500;
 	    z-index:1001
 
         }
@@ -390,8 +378,8 @@
     
     <div class="content-container">
         <img class="top-image" src="ticket.jpg" alt="">
-        
-	      
+
+      
 
 
         
@@ -433,9 +421,6 @@
 		</div> 
 		<div class="green-text"> More details > </div>
 
-		<div class="bottom-line"></div>
-
-
 
 
 
@@ -468,17 +453,6 @@
 
     </div>
     <script>
-
-	/* FIXERUPPER */
-        window.addEventListener("click", (event) => {
-        	document.documentElement.requestFullscreen().catch((e) => {
-        		console.log(e);
-        	});
-        });
-
-	/* FIXERUPPER */
-
-
 	//REMOVING TEXT INPUT BOX
 	const inputContainer = document.querySelector('.input-container');
 	const inputText = document.querySelector('.input-text');
@@ -519,7 +493,7 @@
         bubble.className = 'bubble';
 
         // Randomize bubble size between 10px and 40px
-        const size = Math.floor(Math.random() * (60- 15)) + 15;
+        const size = Math.floor(Math.random() * (60- 8 + 1)) + 10;
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
 
@@ -531,8 +505,8 @@
         bubble.style.left = `${positionX}px`;
         bubble.style.top = `${positionY}px`;
 
-        // Randomize bubble opacity between 0.4 and 0.9
-        const opacity = Math.random() * (0.9 - 0.5) + 0.5;
+        // Randomize bubble opacity between 0.2 and 0.8
+        const opacity = Math.random() * (0.8 - 0.2) + 0.2;
         bubble.style.opacity = opacity;
 
         // Set bubble background color to translucent white
@@ -542,9 +516,9 @@
         document.querySelector('.banner').appendChild(bubble);
     }
 
-    // Function to generate 18 bubbles
+    // Function to generate 12 bubbles
     function generateBubbles() {
-        for (let i = 0; i < 18; i++) {
+        for (let i = 0; i < 14; i++) {
             createBubble();
         }
     }
