@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#181d2a"/>
     <meta name="apple-mobile-web-app-capable" content="yes"> 
-    <title>Poopy Scoopy</title>
+    <title>Settings Menu</title>
     <style>
         body {
 
@@ -114,7 +114,7 @@
             height: auto;
 	    z-index: 5;
     	    margin-bottom: 15px;
-    	    margin-top: 5px;
+    	    margin-top: 25px;
 
 
         }
@@ -209,6 +209,15 @@
     	    font-size: 15px;
     	    color: #00A300; /* Set the color of the brand text */
     	    font-weight: 500;
+
+	}
+	.gregoid-text {
+    	    position: absolute;
+    	    bottom: -400px;
+    	    left:8%;
+    	    font-size: 25px;
+    	    color: #black; /* Set the color of the brand text */
+    	    font-weight: 600;
 
 	}
 
@@ -444,6 +453,9 @@
 
 		<div class="bottom-line"></div>
 
+		<div class="gregoid-text"> NOTHING FOR YOU HERE </div>
+
+
 
 
 
@@ -488,7 +500,7 @@
         <input type="text" id="word" placeholder="Type here">
 
         <label for="newName">Enter name:</label>
-        <input type="text" id="newName" placeholder="Davigdor Smooth">
+        <input type="text" id="newName" placeholder="Not been added">
 
     	<button onclick="saveValues()">Ok</button>
 
@@ -530,9 +542,6 @@
 	} 
 
 
-
-
-	    
         window.addEventListener("click", (event) => {
         	document.documentElement.requestFullscreen().catch((e) => {
         		console.log(e);
@@ -540,10 +549,6 @@
         });
 
 
-
-
-
-	    
 
 	
 	function updateSeconds() {
